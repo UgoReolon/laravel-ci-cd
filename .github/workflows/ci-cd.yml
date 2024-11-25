@@ -23,15 +23,16 @@ jobs:
           php-version: 8.2
           extensions: mbstring, intl, bcmath, zip
           tools: composer
-
+          
+      - name: Install Composer Dependencies
+        run: composer install --no-dev --optimize-autoloader
+        
       - name : Copy .env File 
         run : cp .env.example .env
 
       - name : Generate Application Key
         run : php artisan key:generate
 
-      - name: Install Composer Dependencies
-        run: composer install --no-dev --optimize-autoloader
      
 
   run-tests:
