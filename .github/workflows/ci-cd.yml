@@ -32,9 +32,6 @@ jobs:
 
       - name : Generate Application Key
         run : php artisan key:generate
-      
-      - name : Run artisan serve
-        run : php artisan serve
 
      
 
