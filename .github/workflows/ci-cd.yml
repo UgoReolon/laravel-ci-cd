@@ -27,12 +27,6 @@ jobs:
       - name: Install Composer Dependencies
         run: composer install --no-dev --optimize-autoloader
 
-      - name : Copy .env File 
-        run : cp .env.example .env
-
-      - name : Generate Application Key
-        run : php artisan key:generate
-
      
 
   run-tests:
@@ -42,6 +36,14 @@ jobs:
     steps: 
       - name: Checkout Code
         uses: actions/checkout@v3
+
+      
+      - name : Copy .env File 
+        run : cp .env.example .env
+
+      - name : Generate Application Key
+        run : php artisan key:generate
+
 
       - name: Install Dependencies
         run: composer install
