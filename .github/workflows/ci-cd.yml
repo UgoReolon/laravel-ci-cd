@@ -41,6 +41,9 @@ jobs:
     needs: install-dependencies
     steps: 
 
+      - name: Install Dependencies
+        run: composer install
+        
       - name: Run Laravel Tests
         run: php artisan test
 
