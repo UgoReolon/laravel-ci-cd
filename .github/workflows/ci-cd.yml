@@ -41,9 +41,12 @@ jobs:
     needs: install-dependencies
     steps: 
 
+      - name: Debug Current Directory
+        run: pwd && ls -la
+
       - name: Install Dependencies
         run: composer install
-        
+
       - name: Run Laravel Tests
         run: php artisan test
 
